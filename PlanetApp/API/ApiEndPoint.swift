@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct APIEndPoint {
     static let planetEndpoint = "https://swapi.dev/api/planets/"
 }

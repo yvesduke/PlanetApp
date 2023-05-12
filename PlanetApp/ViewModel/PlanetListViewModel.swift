@@ -10,7 +10,7 @@ import CoreData
 
 @MainActor
 class PlanetListViewModel: ObservableObject {
-    
+
     @Published var planets: [Result] = []
     @Published var error: NetworkError?
 
@@ -19,7 +19,7 @@ class PlanetListViewModel: ObservableObject {
     init(repository: PlanetsListRepository) {
         self.repository = repository
     }
-    
+
 }
 
 extension PlanetListViewModel: PlanetListUseCase{

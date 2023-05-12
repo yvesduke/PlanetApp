@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct PlanetDetailView: View {
-    
-//    var planet: Result
+
     var planet: PlanetEntity
-    
+
     var body: some View {
         VStack {
             Text(planet.name ?? "")
@@ -24,7 +23,6 @@ struct PlanetDetailView: View {
             Divider()
             Text(planet.population ?? "")
         }
-//        Spacer()
     }
 }
 

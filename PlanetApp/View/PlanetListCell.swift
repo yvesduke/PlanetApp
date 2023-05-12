@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PlanetListCell: View {
-//    let planet: Result
     let planet: PlanetEntity
     
     var body: some View {

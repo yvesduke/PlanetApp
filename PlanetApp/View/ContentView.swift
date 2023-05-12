@@ -9,11 +9,11 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    
+
     @StateObject var viewModel: PlanetListViewModel
     @State var isErrorOccured: Bool
     @Environment(\.managedObjectContext) var context
-    
+
     @FetchRequest(entity: PlanetEntity.entity(), sortDescriptors: [])
     var dbPlanetArray: FetchedResults<PlanetEntity>
     var fetchRequest: NSFetchRequest<PlanetEntity> = PlanetEntity.fetchRequest()
@@ -43,7 +43,6 @@ struct ContentView: View {
             }
         }
     }
-
 }
 
 

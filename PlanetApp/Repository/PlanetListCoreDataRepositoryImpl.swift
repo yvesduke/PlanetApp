@@ -9,14 +9,13 @@ import Foundation
 import CoreData
 
 class PlanetListCoreDataRepositoryImpl: PlanetListCoreDataRepository{
-    
-    
+
     var context: NSManagedObjectContext
-    
+
     init(context: NSManagedObjectContext) {
         self.context = context
     }
-    
+
     func savePlanetList(planets: [Result]) async throws {
         planets.forEach{ planet in
             let entity = PlanetEntity(context: context)
@@ -39,9 +38,9 @@ class PlanetListCoreDataRepositoryImpl: PlanetListCoreDataRepository{
             throw CoreDataError.savingError
         }
     }
-    
+
     func getPlanetListFromDb(planets: [Result]) async throws -> [PlanetEntity] {
         return []
     }
-    
+
 }

@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-
 protocol PlanetListUseCase {
     func getDataForPlanets(urlString: String, context: NSManagedObjectContext) async
 }

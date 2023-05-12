@@ -10,7 +10,6 @@
 		001B18D02A0E30E2002ACC1B /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B18CF2A0E30E2002ACC1B /* CoreDataError.swift */; };
 		001B18D22A0E3154002ACC1B /* PlanetListCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B18D12A0E3154002ACC1B /* PlanetListCoreDataRepository.swift */; };
 		001B18D42A0E31F4002ACC1B /* PlanetListCoreDataRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B18D32A0E31F4002ACC1B /* PlanetListCoreDataRepositoryImpl.swift */; };
-		001B18D62A0E9C2B002ACC1B /* PlanetListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B18D52A0E9C2B002ACC1B /* PlanetListViewModelTest.swift */; };
 		00B0469F2A0CFBE0009D9485 /* PlanetAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B0469E2A0CFBE0009D9485 /* PlanetAppApp.swift */; };
 		00B046A12A0CFBE0009D9485 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B046A02A0CFBE0009D9485 /* Persistence.swift */; };
 		00B046A42A0CFBE0009D9485 /* PlanetApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B046A22A0CFBE0009D9485 /* PlanetApp.xcdatamodeld */; };
@@ -56,7 +55,6 @@
 		001B18CF2A0E30E2002ACC1B /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
 		001B18D12A0E3154002ACC1B /* PlanetListCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCoreDataRepository.swift; sourceTree = "<group>"; };
 		001B18D32A0E31F4002ACC1B /* PlanetListCoreDataRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCoreDataRepositoryImpl.swift; sourceTree = "<group>"; };
-		001B18D52A0E9C2B002ACC1B /* PlanetListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListViewModelTest.swift; sourceTree = "<group>"; };
 		00B0469B2A0CFBE0009D9485 /* PlanetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B0469E2A0CFBE0009D9485 /* PlanetAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetAppApp.swift; sourceTree = "<group>"; };
 		00B046A02A0CFBE0009D9485 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				00B046E92A0D3E5B009D9485 /* MockedNetworkManager.swift */,
 				00B046EB2A0D3EAA009D9485 /* planetData.json */,
 				00B046ED2A0D3F33009D9485 /* MockedNetworkManagerTests.swift */,
-				001B18D52A0E9C2B002ACC1B /* PlanetListViewModelTest.swift */,
 			);
 			path = PlanetAppTests;
 			sourceTree = "<group>";
@@ -389,7 +386,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001B18D62A0E9C2B002ACC1B /* PlanetListViewModelTest.swift in Sources */,
 				00B046B62A0CFBE1009D9485 /* PlanetAppTests.swift in Sources */,
 				00B046EE2A0D3F33009D9485 /* MockedNetworkManagerTests.swift in Sources */,
 				00B046EA2A0D3E5B009D9485 /* MockedNetworkManager.swift in Sources */,
