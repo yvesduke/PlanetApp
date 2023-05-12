@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct PlanetListCell: View {
-    let planet: Result
+//    let planet: Result
+    let planet: PlanetEntity
     
     var body: some View {
         HStack {
@@ -26,6 +27,6 @@ struct PlanetListCell: View {
 
 struct PlanetListCell_Previews: PreviewProvider {
     static var previews: some View {
-        PlanetListCell(planet: Result.MockedPlanets()[0])
+        PlanetDetailView(planet: Result.MockedContext()[0])
     }
 }

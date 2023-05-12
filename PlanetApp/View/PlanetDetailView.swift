@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PlanetDetailView: View {
     
-    var planet: Result
+//    var planet: Result
+    var planet: PlanetEntity
     
     var body: some View {
         VStack {
@@ -29,6 +30,6 @@ struct PlanetDetailView: View {
 
 struct PlanetDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PlanetDetailView(planet: Result.MockedPlanets()[0])
+        PlanetDetailView(planet: Result.MockedContext()[0])
     }
 }

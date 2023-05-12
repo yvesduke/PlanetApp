@@ -6,6 +6,7 @@
 
 
 import Foundation
+import CoreData
 
 // MARK: - Planet
 struct PlanetData: Codable {
@@ -46,6 +47,27 @@ extension Result {
         return [
             Result(name: "Tatooine", rotationPeriod: "23", orbitalPeriod: "304", diameter: "10465", climate: "arid", gravity: "1 standard", terrain: "desert", surfaceWater: "1", population: "200000", residents: [], films: [], created: "Monday", edited: "Tuesday", url: "https://google.com"),
             Result(name: "Yavin IV", rotationPeriod: "24", orbitalPeriod: "4818", diameter: "10200", climate: "temperate, tropical", gravity: "1 standard", terrain: "Jungle, rainforests", surfaceWater: "8", population: "1000", residents: [], films: [], created: "Friday", edited: "Sundayu", url: "https://google.com")
+        ]
+    }
+    
+    static func MockedContext() -> [PlanetEntity] {
+        
+        var context = NSManagedObjectContext()
+        let entity = PlanetEntity(context: context)
+        entity.climate = "planet climate"
+        entity.diameter = "planet diameter"
+        entity.gravity = "planet gravity"
+        entity.id = UUID()
+        entity.orbitalPeriod = "planet orbitalPeriod"
+        entity.population = "planet population"
+        entity.rotationPeriod = "planet rotationPeriod"
+        entity.surfaceWater = "planet surfaceWater"
+        entity.terrain = "planet terrain"
+        entity.url = "planet url"
+        entity.name = "planet name"
+        
+        return [
+            PlanetEntity(context: context)
         ]
     }
 }

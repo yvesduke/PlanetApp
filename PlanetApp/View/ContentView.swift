@@ -20,35 +20,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-//            VStack {
-//                if viewModel.error != nil {
-//                } else {
-//                    List{
-//                        ForEach(viewModel.planets, id: \ .id){ planet in
-//                            NavigationLink{
-//                                PlanetDetailView(planet: planet)
-//                            }label: {
-//                                VStack{
-//                                    PlanetListCell(planet: planet)
-//                                }
-//                            }
-//                        }
-//                    }.padding()
-//                }
-//            }.task {
-//                await viewModel.getDataForPlanets(urlString: APIEndPoint.planetEndpoint)
-//                if viewModel.error != nil {
-//                    isErrorOccured =  true
-//                }
-//            }.refreshable {
-//                await viewModel.getDataForPlanets(urlString: APIEndPoint.planetEndpoint)
-//                if viewModel.error != nil {
-//                    isErrorOccured =  true
-//                }
-//            }
-            
             VStack {
-                
                 if dbPlanetArray.isEmpty {
                     ProgressView().onAppear{
                         Task{
@@ -58,11 +30,16 @@ struct ContentView: View {
                 } else {
                     List{
                         ForEach(dbPlanetArray){ planetEntity in
-                            Text(planetEntity.name ?? "")
+                            NavigationLink{
+                                PlanetDetailView(planet: planetEntity)
+                            }label: {
+                                VStack{
+                                    PlanetListCell(planet: planetEntity)
+                                }
+                            }
                         }
-                    }
+                    }.padding()
                 }
-                
             }
         }
     }
