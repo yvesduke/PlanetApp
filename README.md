@@ -36,4 +36,4 @@ responsible for displaying the data to the user and handling the user's interact
  - GraphQl
  - coordinator pattern
  - UItesting and BDD
- - 
+ - Static Code analyser
