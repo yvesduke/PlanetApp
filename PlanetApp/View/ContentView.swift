@@ -12,41 +12,57 @@ struct ContentView: View {
     
     @StateObject var viewModel: PlanetListViewModel
     @State var isErrorOccured: Bool
+    @Environment(\.managedObjectContext) var context
+    
+    @FetchRequest(entity: PlanetEntity.entity(), sortDescriptors: [])
+    var dbPlanetArray: FetchedResults<PlanetEntity>
+    var fetchRequest: NSFetchRequest<PlanetEntity> = PlanetEntity.fetchRequest()
 
     var body: some View {
-        
         NavigationStack {
+//            VStack {
+//                if viewModel.error != nil {
+//                } else {
+//                    List{
+//                        ForEach(viewModel.planets, id: \ .id){ planet in
+//                            NavigationLink{
+//                                PlanetDetailView(planet: planet)
+//                            }label: {
+//                                VStack{
+//                                    PlanetListCell(planet: planet)
+//                                }
+//                            }
+//                        }
+//                    }.padding()
+//                }
+//            }.task {
+//                await viewModel.getDataForPlanets(urlString: APIEndPoint.planetEndpoint)
+//                if viewModel.error != nil {
+//                    isErrorOccured =  true
+//                }
+//            }.refreshable {
+//                await viewModel.getDataForPlanets(urlString: APIEndPoint.planetEndpoint)
+//                if viewModel.error != nil {
+//                    isErrorOccured =  true
+//                }
+//            }
+            
             VStack {
-                if viewModel.error != nil {
-                    ProgressView().alert(isPresented: $isErrorOccured){
-                        Alert(title: Text(viewModel.error?.localizedDescription ?? "Error Occured"),message: Text("Something went wrong"), dismissButton: .default(Text("Ok")))
+                
+                if dbPlanetArray.isEmpty {
+                    ProgressView().onAppear{
+                        Task{
+                            await viewModel.getDataForPlanets(urlString: APIEndPoint.planetEndpoint, context: context)
+                        }
                     }
                 } else {
                     List{
-                        ForEach(viewModel.planets, id: \ .id){ planet in
-                            NavigationLink{
-//                                EmptyView()
-                                PlanetDetailView(planet: planet)
-                            }label: {
-                                VStack{
-//                                    Text("Name: \(planet.name ?? "")")
-//                                    Text("Diameter: \(planet.diameter ?? "")")
-                                    PlanetListCell(planet: planet)
-                                }
-                            }
+                        ForEach(dbPlanetArray){ planetEntity in
+                            Text(planetEntity.name ?? "")
                         }
-                    }.padding()
+                    }
                 }
-            }.task {
-                await viewModel.getDataForPlanets(urlString: APIEndPoint.planetEndpoint)
-                if viewModel.error != nil {
-                    isErrorOccured =  true
-                }
-            }.refreshable {
-                await viewModel.getDataForPlanets(urlString: APIEndPoint.planetEndpoint)
-                if viewModel.error != nil {
-                    isErrorOccured =  true
-                }
+                
             }
         }
     }

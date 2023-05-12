@@ -4,6 +4,7 @@
         <attribute name="climate" optional="YES" attributeType="String"/>
         <attribute name="diameter" optional="YES" attributeType="String"/>
         <attribute name="gravity" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="orbitalPeriod" optional="YES" attributeType="String"/>
         <attribute name="population" optional="YES" attributeType="String"/>

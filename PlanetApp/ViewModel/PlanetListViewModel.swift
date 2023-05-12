@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 @MainActor
 class PlanetListViewModel: ObservableObject {
@@ -18,11 +19,12 @@ class PlanetListViewModel: ObservableObject {
     init(repository: PlanetsListRepository) {
         self.repository = repository
     }
+    
 }
 
 extension PlanetListViewModel: PlanetListUseCase{
 
-    func getDataForPlanets(urlString: String) async {
+    func getDataForPlanets(urlString: String, context: NSManagedObjectContext) async {
         guard let url = URL(string: urlString) else {
             DispatchQueue.main.async {
                 self.error = .invalidURL
@@ -32,11 +34,21 @@ extension PlanetListViewModel: PlanetListUseCase{
         do {
             let planetData = try await repository.getPlanets(for: url)
             planets = planetData.results
-//            print(("================> : \(planets)"))
-//            print(("================> ]]]] ===> : \(planetData)"))
             error = nil
+            await self.saveDataIntoDB(context: context)
         } catch {
             self.error = NetworkError.dataNotFound
+        }
+    }
+    
+    
+    private func saveDataIntoDB(context:NSManagedObjectContext) async {
+        let coreDataRepository = PlanetListCoreDataRepositoryImpl(context: context)
+        do{
+            try await coreDataRepository.savePlanetList(planets: planets)
+            print("DB Save successfully")
+        }catch{
+           print("DB Save Failed")
         }
     }
 

@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import CoreData
 
 
 protocol PlanetListUseCase {
-    func getDataForPlanets(urlString: String) async
+    func getDataForPlanets(urlString: String, context: NSManagedObjectContext) async
 }
