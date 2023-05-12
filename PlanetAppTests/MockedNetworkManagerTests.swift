@@ -11,11 +11,22 @@ import XCTest
 
 class MockedNetworkManagerTests: XCTestCase {
     
+    
+    func testGetDataFromAPI() async throws {
+        let manager = MockedNetworkManager()
+        let url = URL(string: "planetData")!
+        let data = try await manager.getDataFromAPI(url: url)
+        let decoder = JSONDecoder()
+        let result = try decoder.decode(PlanetData.self, from: data)
+        XCTAssertEqual(result.results.count, 10)
+        XCTAssertEqual(result.results[0].name, "Tatooine")
+    }
+    
     func testGetDataFromAPI_Success() async throws {
         // Given
         let mockedNetworkManager = MockedNetworkManager()
         let repo = PlanetRepositoryImpl(networkManager: mockedNetworkManager)
-        let url = URL(string: "productData")!
+        let url = URL(string: "planetData")!
         
         // When
         let data = try await repo.getPlanets(for: url)

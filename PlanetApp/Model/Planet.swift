@@ -52,7 +52,7 @@ extension Result {
     
     static func MockedContext() -> [PlanetEntity] {
         
-        var context = NSManagedObjectContext()
+        let context = NSManagedObjectContext()
         let entity = PlanetEntity(context: context)
         entity.climate = "planet climate"
         entity.diameter = "planet diameter"

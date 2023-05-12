@@ -7,6 +7,7 @@
 
 import Foundation
 @testable import PlanetApp
+import XCTest
 
 class MockedNetworkManager: Networkable {
     
