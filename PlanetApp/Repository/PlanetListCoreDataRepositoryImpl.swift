@@ -40,7 +40,12 @@ class PlanetListCoreDataRepositoryImpl: PlanetListCoreDataRepository{
     }
 
     func getPlanetListFromDb(planets: [Result]) async throws -> [PlanetEntity] {
-        return []
+
+        let fetchRequest: NSFetchRequest<PlanetEntity>
+        fetchRequest = PlanetEntity.fetchRequest()
+        let planets = try context.fetch(fetchRequest)
+    
+        return planets
     }
 
 }
