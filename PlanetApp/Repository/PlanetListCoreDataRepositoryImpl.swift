@@ -20,6 +20,16 @@ class PlanetListCoreDataRepositoryImpl: PlanetListCoreDataRepository{
     func savePlanetList(planets: [Result]) async throws {
         planets.forEach{ planet in
             let entity = PlanetEntity(context: context)
+            entity.climate = planet.climate
+            entity.diameter = planet.diameter
+            entity.gravity = planet.gravity
+            entity.id = planet.id
+            entity.orbitalPeriod = planet.orbitalPeriod
+            entity.population = planet.population
+            entity.rotationPeriod = planet.rotationPeriod
+            entity.surfaceWater = planet.surfaceWater
+            entity.terrain = planet.terrain
+            entity.url = planet.url
             entity.name = planet.name
         }
         do{

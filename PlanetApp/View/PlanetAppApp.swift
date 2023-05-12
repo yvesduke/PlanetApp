@@ -13,7 +13,8 @@ struct PlanetAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: PlanetListViewModel(repository: PlanetRepositoryImpl(networkManager: NetworkManger())), isErrorOccured: false)
+//            ContentView(viewModel: PlanetListViewModel(repository: PlanetRepositoryImpl(networkManager: NetworkManger())), isErrorOccured: false)
+            ContentView(viewModel: PlanetListViewModel(repository: PlanetRepositoryImpl(networkManager: NetworkManger())), isErrorOccured: false).environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

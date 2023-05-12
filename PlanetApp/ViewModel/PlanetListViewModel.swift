@@ -33,14 +33,15 @@ extension PlanetListViewModel: PlanetListUseCase{
         }
         do {
             let planetData = try await repository.getPlanets(for: url)
-            planets = planetData.results
-            error = nil
+            self.planets = planetData.results
+            self.error = nil
             await self.saveDataIntoDB(context: context)
         } catch {
-            self.error = NetworkError.dataNotFound
+            DispatchQueue.main.async {
+                self.error = NetworkError.dataNotFound
+            }
         }
     }
-    
     
     private func saveDataIntoDB(context:NSManagedObjectContext) async {
         let coreDataRepository = PlanetListCoreDataRepositoryImpl(context: context)
