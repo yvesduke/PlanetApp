@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001B18D02A0E30E2002ACC1B /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B18CF2A0E30E2002ACC1B /* CoreDataError.swift */; };
+		001B18D22A0E3154002ACC1B /* PlanetListCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B18D12A0E3154002ACC1B /* PlanetListCoreDataRepository.swift */; };
+		001B18D42A0E31F4002ACC1B /* PlanetListCoreDataRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B18D32A0E31F4002ACC1B /* PlanetListCoreDataRepositoryImpl.swift */; };
 		00B0469F2A0CFBE0009D9485 /* PlanetAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B0469E2A0CFBE0009D9485 /* PlanetAppApp.swift */; };
 		00B046A12A0CFBE0009D9485 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B046A02A0CFBE0009D9485 /* Persistence.swift */; };
 		00B046A42A0CFBE0009D9485 /* PlanetApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00B046A22A0CFBE0009D9485 /* PlanetApp.xcdatamodeld */; };
@@ -49,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		001B18CF2A0E30E2002ACC1B /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
+		001B18D12A0E3154002ACC1B /* PlanetListCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCoreDataRepository.swift; sourceTree = "<group>"; };
+		001B18D32A0E31F4002ACC1B /* PlanetListCoreDataRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCoreDataRepositoryImpl.swift; sourceTree = "<group>"; };
 		00B0469B2A0CFBE0009D9485 /* PlanetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B0469E2A0CFBE0009D9485 /* PlanetAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetAppApp.swift; sourceTree = "<group>"; };
 		00B046A02A0CFBE0009D9485 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				00B046DF2A0D00E2009D9485 /* Planet.swift */,
+				001B18CF2A0E30E2002ACC1B /* CoreDataError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +217,8 @@
 			children = (
 				00B046DB2A0CFF15009D9485 /* PlanetsRepository.swift */,
 				00B046DD2A0CFF55009D9485 /* PlanetRepositoryImpl.swift */,
+				001B18D12A0E3154002ACC1B /* PlanetListCoreDataRepository.swift */,
+				001B18D32A0E31F4002ACC1B /* PlanetListCoreDataRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -353,8 +362,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				001B18D22A0E3154002ACC1B /* PlanetListCoreDataRepository.swift in Sources */,
 				00B046D72A0CFE06009D9485 /* ApiEndPoint.swift in Sources */,
 				00B046D92A0CFE13009D9485 /* NetworkError.swift in Sources */,
+				001B18D02A0E30E2002ACC1B /* CoreDataError.swift in Sources */,
 				00B046D52A0CFDF1009D9485 /* NetworkManager.swift in Sources */,
 				00B046DE2A0CFF55009D9485 /* PlanetRepositoryImpl.swift in Sources */,
 				00B0469F2A0CFBE0009D9485 /* PlanetAppApp.swift in Sources */,
@@ -363,6 +374,7 @@
 				00B046E02A0D00E2009D9485 /* Planet.swift in Sources */,
 				00B046D22A0CFDC4009D9485 /* PlanetListViewModel.swift in Sources */,
 				00B046E32A0D035E009D9485 /* PlanetListUseCase.swift in Sources */,
+				001B18D42A0E31F4002ACC1B /* PlanetListCoreDataRepositoryImpl.swift in Sources */,
 				00B046A42A0CFBE0009D9485 /* PlanetApp.xcdatamodeld in Sources */,
 				00B046A62A0CFBE0009D9485 /* ContentView.swift in Sources */,
 				00B046A12A0CFBE0009D9485 /* Persistence.swift in Sources */,
