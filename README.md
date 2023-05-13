@@ -34,6 +34,6 @@ responsible for displaying the data to the user and handling the user's interact
 
 #### Recommendations for future features and improvements :
  - GraphQl
- - coordinator pattern
+ - Coordinator pattern
  - UItesting and BDD
  - Static Code analyser
