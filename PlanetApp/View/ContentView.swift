@@ -22,6 +22,9 @@ struct ContentView: View {
                     ProgressView().onAppear{
                         Task{
                             await viewModel.getDataForPlanets(urlString: APIEndPoint.planetEndpoint, context: context)
+                            if viewModel.error != nil{
+                                isErrorOccured = true
+                            }
                         }
                     }
                     List{
@@ -56,6 +59,9 @@ struct ContentView: View {
             }
             .task {
                 await viewModel.getDataFromDb(context: context)
+                if viewModel.dbError != nil{
+                    isErrorOccured = true
+                }
             }
         }
     }
