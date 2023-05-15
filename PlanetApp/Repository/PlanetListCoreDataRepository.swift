@@ -10,6 +10,6 @@ import Foundation
 protocol PlanetListCoreDataRepository{
 
     func savePlanetList(planets:[Result]) async throws
-    func getPlanetListFromDb(planets:[Result]) async throws -> [PlanetEntity]
+    func getPlanetListFromDb() async throws -> [PlanetEntity]
 
 }

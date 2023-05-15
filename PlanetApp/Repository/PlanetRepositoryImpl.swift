@@ -20,5 +20,4 @@ final class PlanetRepositoryImpl: PlanetsListRepository {
         let planetData = try JSONDecoder().decode(PlanetData.self, from: data)
         return planetData
     }
-
 }

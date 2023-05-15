@@ -9,44 +9,60 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-
+    
     @StateObject var viewModel: PlanetListViewModel
     @State var isErrorOccured: Bool
     @Environment(\.managedObjectContext) var context
-
-    @FetchRequest(entity: PlanetEntity.entity(), sortDescriptors: [])
-    var dbPlanetArray: FetchedResults<PlanetEntity>
-    var fetchRequest: NSFetchRequest<PlanetEntity> = PlanetEntity.fetchRequest()
-
+    
     var body: some View {
+
         NavigationStack {
             VStack {
-                if dbPlanetArray.isEmpty {
+                if viewModel.planetsDb.isEmpty {
                     ProgressView().onAppear{
                         Task{
                             await viewModel.getDataForPlanets(urlString: APIEndPoint.planetEndpoint, context: context)
                         }
                     }
-                } else {
                     List{
-                        ForEach(dbPlanetArray){ planetEntity in
+                        ForEach(viewModel.planets, id: \.id){ remotePlanet in
                             NavigationLink{
-                                PlanetDetailView(planet: planetEntity)
+                                PlanetDetailView(dbPlanet: nil, remotePlanet: remotePlanet)
                             }label: {
                                 VStack{
-                                    PlanetListCell(planet: planetEntity)
+                                    PlanetListCell(dbPlanet: nil, remotePlanet: remotePlanet)
+                                }
+                            }
+                        }
+                    }.padding()
+                } else if viewModel.error != nil {
+                    ProgressView().alert(isPresented: $isErrorOccured){
+                        Alert(title: Text(viewModel.error?.localizedDescription ?? "Error Occured"),message: Text("Something went wrong"),
+                              dismissButton: .default(Text("Ok")))
+                    }
+                } else {
+                    List{
+                        ForEach(viewModel.planetsDb){ planetEntity in
+                            NavigationLink{
+                                PlanetDetailView(dbPlanet: planetEntity, remotePlanet: nil)
+                            }label: {
+                                VStack{
+                                    PlanetListCell(dbPlanet: planetEntity, remotePlanet: nil)
                                 }
                             }
                         }
                     }.padding()
                 }
             }
+            .task {
+                await viewModel.getDataFromDb(context: context)
+            }
         }
     }
 }
 
-
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
         ContentView(viewModel: PlanetListViewModel(repository: PlanetRepositoryImpl(networkManager: NetworkManger())), isErrorOccured: false)
     }

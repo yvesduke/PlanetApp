@@ -9,25 +9,26 @@ import SwiftUI
 
 struct PlanetDetailView: View {
 
-    var planet: PlanetEntity
+    let dbPlanet: PlanetEntity?
+    let remotePlanet: Result?
 
     var body: some View {
         VStack {
-            Text(planet.name ?? "")
+            dbPlanet?.diameter != nil ? Text(dbPlanet?.diameter ?? "") : Text(remotePlanet?.diameter ?? "")
                 .foregroundColor(.gray)
                 .font(.headline)
             Divider()
-            Text(planet.terrain ?? "")
+            dbPlanet?.terrain != nil ? Text(dbPlanet?.terrain ?? "") : Text(remotePlanet?.terrain ?? "")
             Divider()
-            Text(planet.climate ?? "")
+            dbPlanet?.climate != nil ? Text(dbPlanet?.diameter ?? "") : Text(remotePlanet?.diameter ?? "")
             Divider()
-            Text(planet.population ?? "")
+            dbPlanet?.population != nil ? Text(dbPlanet?.population ?? "") : Text(remotePlanet?.population ?? "")
         }
     }
 }
 
 struct PlanetDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PlanetDetailView(planet: Result.MockedContext()[0])
+        PlanetDetailView(dbPlanet: nil, remotePlanet: Result.MockedPlanets()[0])
     }
 }

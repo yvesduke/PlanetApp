@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct PlanetListCell: View {
-    let planet: PlanetEntity
+    let dbPlanet: PlanetEntity?
+    let remotePlanet: Result?
     
     var body: some View {
         HStack {
@@ -16,8 +17,8 @@ struct PlanetListCell: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             VStack(alignment: .leading) {
-                Text(planet.name ?? "")
-                Text(planet.diameter ?? "")
+                dbPlanet?.name != nil ? Text(dbPlanet?.name ?? "") : Text(remotePlanet?.name ?? "")
+                dbPlanet?.diameter != nil ? Text(dbPlanet?.diameter ?? "") : Text(remotePlanet?.diameter ?? "")
             }
         }
         .padding()
@@ -26,6 +27,7 @@ struct PlanetListCell: View {
 
 struct PlanetListCell_Previews: PreviewProvider {
     static var previews: some View {
-        PlanetDetailView(planet: Result.MockedContext()[0])
+        PlanetDetailView(dbPlanet: nil, remotePlanet: Result.MockedPlanets()[0])
+
     }
 }

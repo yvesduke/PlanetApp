@@ -57,6 +57,7 @@
 		001B18D12A0E3154002ACC1B /* PlanetListCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCoreDataRepository.swift; sourceTree = "<group>"; };
 		001B18D32A0E31F4002ACC1B /* PlanetListCoreDataRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCoreDataRepositoryImpl.swift; sourceTree = "<group>"; };
 		001B18D92A0EBB9B002ACC1B /* PlanetListCoreDataRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCoreDataRepositoryTest.swift; sourceTree = "<group>"; };
+		003EBCB92A12A1C4007B867B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		00B0469B2A0CFBE0009D9485 /* PlanetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B0469E2A0CFBE0009D9485 /* PlanetAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetAppApp.swift; sourceTree = "<group>"; };
 		00B046A02A0CFBE0009D9485 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -133,6 +134,7 @@
 		00B0469D2A0CFBE0009D9485 /* PlanetApp */ = {
 			isa = PBXGroup;
 			children = (
+				003EBCB92A12A1C4007B867B /* Info.plist */,
 				00B046E12A0D033B009D9485 /* UseCase */,
 				00B046DA2A0CFE1F009D9485 /* Repository */,
 				00B046D32A0CFDDD009D9485 /* API */,
@@ -543,6 +545,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlanetApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -581,6 +584,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PlanetApp/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
