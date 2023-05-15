@@ -37,3 +37,11 @@ responsible for displaying the data to the user and handling the user's interact
  - Coordinator pattern
  - UItesting and BDD
  - Static Code analyser
+
+#### Screen shots
+<img width="329" alt="Screenshot 2023-05-15 at 15 34 20" src="https://github.com/yvesduke/PlanetApp/assets/8191486/157a96cf-5cdc-44f4-ad14-9641083ec0a0">
+
+<img width="329" alt="Screenshot 2023-05-15 at 15 35 43" src="https://github.com/yvesduke/PlanetApp/assets/8191486/3db3c830-87f8-4ad3-9b46-9cbc9ba5e012">
+
+
+
